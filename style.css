@@ -1,0 +1,145 @@
+/* VARIÁVEIS DE CORES */
+:root {
+    --primary: #064E3B;
+    --accent: #D97706;
+    --bg-body: #F8F9F3;
+    --bg-cards: #ffffff;
+    --text-main: #1F2937;
+    --text-light: #4B5563;
+    --white: #ffffff;
+    --hub-bg: rgba(6, 78, 59, 0.9);
+    --font-base: 18px;
+}
+
+/* MODO ESCURO */
+body.dark-mode {
+    --primary: #81C784;
+    --accent: #FFB74D;
+    --bg-body: #121212;
+    --bg-cards: #1E1E1E;
+    --text-main: #E5E7EB;
+    --text-light: #9CA3AF;
+    --white: #121212;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; transition: background 0.3s, color 0.3s; }
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-size: var(--font-base);
+    line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--primary); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+
+/* HUB DE ACESSIBILIDADE */
+.accessibility-hub {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hub-container {
+    background: var(--hub-bg);
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hub-container button {
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200') center/cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 { color: white; font-size: 3.5rem; }
+.hero h1 span { color: var(--accent); }
+.btn-primary { 
+    display: inline-block; margin-top: 20px; padding: 12px 30px; 
+    background: var(--accent); color: white; text-decoration: none; border-radius: 5px; font-weight: bold;
+}
+
+/* CARDS E GRIDS */
+.grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+.card { background: var(--bg-cards); padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-bottom: 5px solid var(--primary); }
+
+.grid-two-img { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.image-box img { width: 100%; border-radius: 20px; }
+
+/* GRÁFICOS CSS */
+.bar-item { margin-bottom: 20px; }
+.progress-bar { background: #ddd; height: 30px; border-radius: 15px; overflow: hidden; margin-top: 5px; }
+.fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+
+/* TABELA */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--bg-cards); }
+th, td { padding: 15px; border: 1px solid #ddd; text-align: left; }
+th { background: var(--primary); color: white; }
+
+footer { background: var(--primary); color: white; text-align: center; padding: 40px 0; }
+
+@media (max-width: 768px) {
+    .grid-two, .grid-two-img { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+}
+/* ESTILOS DO JOGO */
+.game-section { text-align: center; }
+.game-card { 
+    background: #1a2e26; /* Cor escura estilo terminal */
+    color: #e0e0e0;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--accent);
+}
+
+.game-icon { font-size: 50px; color: var(--accent); margin-bottom: 20px; }
+
+.game-stats { 
+    display: flex; justify-content: space-around; 
+    background: rgba(255,255,255,0.1); 
+    padding: 10px; border-radius: 10px; margin-bottom: 20px;
+}
+
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+.options-grid button { 
+    padding: 15px; border: none; border-radius: 8px; 
+    cursor: pointer; font-weight: bold; font-family: 'Poppins';
+}
+
+/* Botões específicos do jogo */
+.btn-choice { background: #eee; color: #333; }
+.btn-choice:hover { background: #ddd; }
+.btn-agroforte { background: var(--accent); color: white; border: 2px solid white !important; }
+.btn-risk { background: #c0392b; color: white; }
+
+.agroforte-offer { 
+    background: rgba(217, 119, 6, 0.2); 
+    padding: 20px; border-radius: 15px; border: 1px dashed var(--accent);
+}
+
+/* Ajuste Modo Escuro para o Jogo */
+body.dark-mode .game-card { background: #000; border-color: var(--primary); }
